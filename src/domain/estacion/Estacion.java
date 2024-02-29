@@ -26,11 +26,11 @@ public class Estacion {
 	}
 
 	private int getId() {
-		return id;
+		return this.id;
 	}
 
 	private String getDireccion() {
-		return direccion;
+		return this.direccion;
 	}
 
 	@Override

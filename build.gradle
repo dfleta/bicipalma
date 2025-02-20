@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
     errorprone 'com.google.errorprone:error_prone_core:2.28.0'
 }
 
@@ -22,12 +22,18 @@ sourceSets {
             // Gradle will only search directly in src for 
             // the respective source code 
             srcDirs = ['src']
+            
+        }
+    }
+    test {
+        java {
+            srcDirs = ['test']
         }
     }
 }
 
 test {
-    useJUnitPlatform()
+    useJUnit()
 }
 
 java {

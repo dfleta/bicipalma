@@ -19,9 +19,9 @@ class Anclajes {
     }
 
     private void crearAnclajes() {
-		for (int i = 0; i < anclajes.length; i++) {
-			this.anclajes[i] = new Anclaje();
-		}
+        for (int i = 0; i < anclajes.length; i++) {
+            this.anclajes[i] = new Anclaje();
+        }
     }
     
     Anclaje[] anclajes() {
@@ -38,7 +38,7 @@ class Anclajes {
 
     boolean isAnclajeOcupado(int posicion) {
 		return this.anclajes[posicion].isOcupado();
-	}
+	  }
 
     void liberarAnclaje(int posicion) {
 		this.anclajes[posicion].liberarBici();
@@ -49,8 +49,8 @@ class Anclajes {
     }
 
     int seleccionarAnclaje() {
-		Integer idAnclaje = ThreadLocalRandom.current().nextInt(0, numAnclajes());
-		return idAnclaje;
+        Integer idAnclaje = ThreadLocalRandom.current().nextInt(0, numAnclajes());
+        return idAnclaje;
     }
 
     @Override

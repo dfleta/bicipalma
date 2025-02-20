@@ -1,5 +1,7 @@
 package domain.estacion;
 
+import java.util.Objects;
+
 import domain.bicicleta.Movil;
 import domain.tarjetausuario.Autenticacion;
 
@@ -72,6 +74,8 @@ public class Estacion {
 
 	public void anclarBicicleta(Movil bici) {
 		// insertar el objeto bicicleta en el primer registro libre del array
+
+		if (Objects.isNull(bici)) {return;}
 
 		int posicion = 0;
 		int numeroAnclaje = posicion + 1;

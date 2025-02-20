@@ -5,6 +5,8 @@ import org.junit.Test;
 
 import domain.bicicleta.Bicicleta;
 import domain.bicicleta.Movil;
+import domain.tarjetausuario.Autenticacion;
+import domain.tarjetausuario.TarjetaUsuario;
 
 public class EstacionTest {
 
@@ -38,10 +40,10 @@ public class EstacionTest {
     public void testConsultarEstacion() {
         // Arrange
         Estacion estacion = new Estacion(1, "Manacor", 6);
-        String expectedOutput = "id: 1\n" +
+        String representacionEsperada = "id: 1\n" +
                               "direccion: Manacor\n" +
                               "numeroAnclajes: 6";
-        assertEquals(expectedOutput, estacion.toString());
+        assertEquals(representacionEsperada, estacion.toString());
     }
 
     @Test
@@ -101,5 +103,27 @@ public class EstacionTest {
         
         // ASSERT
         assertEquals(1, estacion.anclajesLibres());
+    }
+
+    @Test
+    public void testLeerTarjetaUsuarioActivada() {
+        // Arrange
+        Estacion estacion = new Estacion(1, "Calle Test", 1);
+        Autenticacion tarjeta = new TarjetaUsuario("0099887766", true);     
+        // Act
+        boolean resultado = estacion.leerTarjetaUsuario(tarjeta);
+        // Assert
+        assertTrue(resultado);
+    }
+
+    @Test
+    public void tesLeerTarjetaUsuarioDesactivada() {
+        // Arrange
+        Estacion estacion = new Estacion(1, "Calle Test", 1);
+        Autenticacion tarjeta = new TarjetaUsuario("0099887766", false);             
+        // Act
+        boolean resultado = estacion.leerTarjetaUsuario(tarjeta);
+        // Assert
+        assertFalse(resultado);
     }
 } 

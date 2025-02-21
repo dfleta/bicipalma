@@ -126,4 +126,26 @@ public class EstacionTest {
         // Assert
         assertFalse(resultado);
     }
+
+    @Test
+    public void testRetirarBicicleta() {
+        // Crear estación con 1 anclaje
+        Estacion estacion = new Estacion(1, "Calle Test", 3);
+        
+        // Crear bicicleta y anclarla
+        Movil bici = new Bicicleta(101);
+        estacion.anclarBicicleta(bici);
+        
+        // Caso 1: Tarjeta inactiva
+        TarjetaUsuario tarjetaInactiva = new TarjetaUsuario("000", false);
+        estacion.retirarBicicleta(tarjetaInactiva);
+        // Verificar que la bici sigue anclada (anclajesLibres = 0)
+        assertEquals(2, estacion.anclajesLibres());
+        
+        // Caso 2: Tarjeta activa
+        TarjetaUsuario tarjetaActiva = new TarjetaUsuario("111", true);
+        estacion.retirarBicicleta(tarjetaActiva);
+        // Verificar que la bici fue retirada (anclajesLibres = 1)
+        assertEquals(3, estacion.anclajesLibres());
+    }
 } 

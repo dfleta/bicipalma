@@ -11,6 +11,7 @@ public class BicicletaTest {
 
     @Before
     public void setup_bicicleta() {
+        // ARRANGE
         bici = new Bicicleta(101);
     }
     
@@ -22,5 +23,15 @@ public class BicicletaTest {
         int id = bici.getId();
         // ASSERT
         assertEquals(idExpected, id);
+    }
+
+    @Test
+    public void test_toString_bicicleta() {
+        // ARRANGE
+        String id = "101";
+        // ACT
+        String representacionIdBici = bici.toString();
+        // ASSERT
+        assertEquals(id, representacionIdBici);
     }
 }

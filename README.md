@@ -30,3 +30,8 @@ Se añadieron los casos test mínimos que corresponden a las historias de usuari
 Se utilizó como práctica para crear una configuración de Gradle con una estructura de directorios que no respeta la convención sobre configuración que emplean Maven y Gradle.
 
 No se emplea programación funcional, ni existe control de errores (ni recursos asociados como `Optional`), ni estructuras de datos dinámicas porque se trata de un proyecto de aprendizaje para alumnado que inicia su andadura en Java.
+
+Sobre el patrón AAA (Arrange, Act, Assert) usado para escribir los casos test de unidad:
+
+[Unit test basics, Learn Visual Studio Testing](https://learn.microsoft.com/en-us/visualstudio/test/unit-test-basics?view=vs-2022#write-your-tests)
+
